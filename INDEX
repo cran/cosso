@@ -1,0 +1,6 @@
+ cosso	        Fit additive COSSO and adaptive COSSO models for Gaussian-type responses  
+ compwt         Estimate weights used in the adaptive COSSO 
+ plot.cosso     Plot method for COSSO object
+ predict.cosso	Make predictions or extract coefficients from a fitted COSSO model
+ summary.cosso	Summary method for COSSO object
+    
