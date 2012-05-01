@@ -1,11 +1,11 @@
 \name{cosso-internal}
+\alias{rescale}
 \alias{genK}
 \alias{gram}
 \alias{bigGram}
 \alias{wsGram}
 \alias{sspline}
 \alias{cvsplit}
-\alias{cvlam}
 \alias{gcvlam}
 \alias{twostep}
 \alias{cvadd}
@@ -13,6 +13,15 @@
 \alias{gcv}
 \alias{bic}
 \alias{compdf}
+\alias{rho}
+\alias{df.est}
+\alias{cvM.qr}
+\alias{cvLam.qr}
+\alias{CVadd}
+\alias{cquan}
+\alias{garrote.qr}
+\alias{kqr}
+\alias{cvsplitID}
 \title{Internal Functions}
 
 \description{

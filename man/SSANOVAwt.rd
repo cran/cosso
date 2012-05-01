@@ -1,5 +1,5 @@
-\name{compwt}
-\alias{compwt}
+\name{SSANOVAwt}
+\alias{SSANOVAwt}
 \title{
 Computing the weights used in the penalty term of the adaptive COSSO.} 
 
@@ -10,15 +10,15 @@ Here \eqn{P_j} denotes the projection operator to the subspace. By default, we u
 as the initial estimator and set \eqn{\gamma} as 1.
 }
 
-\usage{ compwt(x,y,mscale=rep(1,ncol(x)),gampow=1) }
+\usage{ SSANOVAwt(x,y,mscale=rep(1,ncol(x)),gampow=1) }
 
 
 \arguments{
 \item{x}{input matrix; the number of rows is sample size, the number of columns is the data dimension.
          The range of input variables is scaled to [0,1].}
 \item{y}{response vector}
-\item{mscale}{Scale parameter for the Gram matrix associated with each function component. Default is \code{rep(1,ncol(x))}}
-\item{gampow}{Power of the \eqn{L_2} norm. Default is \code{1}}
+\item{mscale}{scale parameter for the Gram matrix associated with each function component. Default is \code{rep(1,ncol(x))}}
+\item{gampow}{power of the \eqn{L_2} norm. Default is \code{1}}
 }
 
 
@@ -26,8 +26,10 @@ as the initial estimator and set \eqn{\gamma} as 1.
 \item{adwt}{The adaptive weights used in the adaptive COSSO}
 }
 
-\references{Storlie, C, Bondell, H., Reich, B. and Zhang, H.H. "Surface estimation, variable selection, and the nonparametric oracle property", 
-Statistica Sinica, 2011.}
+\references{
+Storlie, C. B., Bondell, H. D., Reich, B. J. and Zhang, H. H. (2011) "Surface Estimation, Variable Selection, and the Nonparametric Oracle Property", Statistica Sinica, \bold{21}, 679--705.
+
+}
 
 \author{
 Hao Helen Zhang \email{hzhang@stat.ncsu.edu} }
@@ -35,10 +37,6 @@ Hao Helen Zhang \email{hzhang@stat.ncsu.edu} }
 
 \examples{
 data(ozone)
-set.seed(2010)
-# Randomly select one-third of the data as training data.
-train_id <- sample(1:nrow(ozone),round(nrow(ozone)/3))
-wt <- compwt(ozone[train_id,-1],ozone[train_id,1],rep(1,ncol(ozone)-1),1)
-ozone_cosso <- cosso(x=ozone[train_id,-1],y=ozone[train_id,1],wt=wt,type="BIC")
-summary.cosso(ozone_cosso)
+wt <- SSANOVAwt(ozone[,-1],ozone[,1])
+print(wt)
 }

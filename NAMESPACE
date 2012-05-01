@@ -1,0 +1,10 @@
+export(rescale,genK,bigGram,gram,wsGram,predict.cosso,plot.cosso,
+       cosso,tune.cosso,sspline,gcvlam,twostep,cvadd,bicadd,gcv,bic,compdf,SSANOVAwt,cvsplit,
+       cosso.qr,tune.cosso.qr,cquan,kqr,garrote.qr,CVadd,cvLam.qr,cvM.qr,cvsplitID,df.est,rho,KQR,KQRwt)
+
+S3method("plot","cosso")
+S3method("predict","cosso")
+
+
+
+
