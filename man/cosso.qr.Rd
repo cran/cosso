@@ -1,14 +1,12 @@
 \name{cosso.qr} 
 \alias{cosso.qr}
 \title{
-Fit additive COSSO and adaptive COSSO models for Quantile Regression
+Fit a nonparaletric quantile regression model with COSSO regularization
 }
 
 \description{
-COSSO is a regularization method for variable selection and function estimation in multivariate
-nonparametric (quantile) regression models. By imposing a soft-thresholding type penalty onto function components, 
-the COSSO solution is sparse and hence able to identify important variables. 
-The method is developed in the framework of smoothing spline ANOVA.}
+Fit a penalized quantile regression model with COSSO regularization. The regularization path is computed
+for the COSSO penalty at a grid of values for the regularization parameter M.}
 
 \usage{
 cosso.qr(x,y,tau,wt=rep(1,ncol(x)),scale=FALSE,parallel=FALSE,cpus=1)
@@ -23,7 +21,7 @@ cosso.qr(x,y,tau,wt=rep(1,ncol(x)),scale=FALSE,parallel=FALSE,cpus=1)
 \item{wt}{weights for predictors. Default is \code{rep(1,ncol(x))}.}
 \item{scale}{if \code{TRUE}, each predictor variable is rescaled to [0,1] interval. Dafault is \code{FALSE}.}
 \item{parallel}{parallelize task using \code{snowfall} package? Default is \code{FALSE}. Recommended when sample size is large.}
-\item{cpus}{number of available cpu unit. Default is \code{1}.}
+\item{cpus}{number of available processor units. Default is \code{1}.}
 }
 
 \details{
@@ -33,15 +31,16 @@ as the inverse \eqn{L_2} norm of initial function estimator, see \code{\link{KQR
 }
 
 \value{
-\item{wt}{pre-specified weights.}
+An object with S3 class "cosso".
+\item{wt}{weights.}
 \item{x}{input matrix.}
 \item{y}{response vector.}
-\item{basis.id}{Indices of observations used as "knots". All observations will be used in quantile regression.}
+\item{basis.id}{Indices of observations used to compute the kernel matrices. All observations will be used in quantile regression.}
 \item{tune}{a list containing tuning result}
 }
 
 \author{
-Hao Helen Zhang
+Hao Helen Zhang and Chen-Yen Lin
 }
 
 \seealso{\code{\link{tune.cosso.qr}}, \code{\link{plot.cosso}}, \code{\link{predict.cosso}}
@@ -49,7 +48,8 @@ Hao Helen Zhang
 
 \examples{
 data(ozone)
-set.seed(2010)
+set.seed(27695)
+## Use one third observations as training set
 train_id   <- sample(1:nrow(ozone),round(nrow(ozone)/3))
 cossoqrObj <- cosso.qr(x=ozone[train_id,-1],y=ozone[train_id,1],tau=0.5)
 plot.cosso(cossoqrObj,plottype="Path")

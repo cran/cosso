@@ -32,7 +32,7 @@ Storlie, C. B., Bondell, H. D., Reich, B. J. and Zhang, H. H. (2011) "Surface Es
 }
 
 \author{
-Hao Helen Zhang \email{hzhang@stat.ncsu.edu} }
+Hao Helen Zhang}
 
 
 \examples{

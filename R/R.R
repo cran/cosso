@@ -293,11 +293,11 @@ twostep <- function(Gramat1,Gramat2,y,wt,lam,mm)
 
 cvadd <- function(object,folds)
    {
+    y <- object$y
+    Gramat <- object$Kmat
+    wt<- object$wt
     n <- length(y)
     d <- dim(Gramat)[3]
-    Gramat <- object$Kmat
-    y <- object$y
-    wt<- object$wt
     if(d<20)   mm <- seq(0.25,ceiling(max(object$tune$Mgrid)),by=0.5)
     else       mm <- seq(0.25,ceiling(max(object$tune$Mgrid)),by=1)
     Fullmm=as.numeric(names(table(c(mm,object$tune$Mgrid))))
@@ -466,7 +466,7 @@ cosso.qr=function(x,y,tau,wt=rep(1,ncol(x)),scale=FALSE,parallel=FALSE,cpus=1)
 
      if(parallel) 
         { 
-         sfLibrary(cosso);sfLibrary(quadprog);sfLibrary(Rglpk)  
+         sfLibrary("cosso",character.only=TRUE);sfLibrary("quadprog",character.only=TRUE);sfLibrary("Rglpk",character.only=TRUE)  
         }
      tempcoefs=sfClusterApplyLB(tempM,cquan,tau=tau,y=y,K3dtrain=Gramat,lam0=bestlam,wts=wt)
      for(m in 1:length(tempM))
@@ -603,7 +603,7 @@ cvLam.qr=function(Gramat,y,tau,wt,lam,folds,theta,parallel=FALSE,cpus=1)
    CVmat  <- matrix(NA,ncol=length(lam),nrow=folds)
    splitID<- cvsplitID(n,folds)
 
-   sfLibrary(quadprog)
+   sfLibrary("quadprog",character.only=TRUE)
    for(f in 1:folds)
       {
         testID <- splitID[!is.na(splitID[,f]),f]
@@ -632,8 +632,8 @@ cvLam.qr=function(Gramat,y,tau,wt,lam,folds,theta,parallel=FALSE,cpus=1)
    splitID<- cvsplitID(n,folds)
 
    sfInit(parallel=parallel, cpus=cpus)
-   sfLibrary(quadprog);sfLibrary(Rglpk)
-   if(parallel) sfLibrary(cosso)
+   sfLibrary("quadprog",character.only=TRUE);sfLibrary("Rglpk",character.only=TRUE)
+   if(parallel) sfLibrary("cosso",character.only=TRUE)
    for(f in 1:folds)
       {
         testID <- splitID[!is.na(splitID[,f]),f]
@@ -700,7 +700,7 @@ KQR=function(x,y,tau,lam0s,folds=5,parallel=FALSE,cpus=1)
     splitID    <- cvsplitID(n,folds)
     
     sfInit(parallel=parallel, cpus=cpus)
-    sfLibrary(quadprog)
+    sfLibrary("quadprog",character.only=TRUE)
     for(f in 1:folds)
         {
         testID <- splitID[!is.na(splitID[,f]),f]

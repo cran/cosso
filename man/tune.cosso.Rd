@@ -17,7 +17,7 @@ tune.cosso(object,type=c("BIC","CV"), folds=5,plot.it=TRUE)
 \item{object}{a cosso object}
 \item{type}{type of tuning method}
 \item{folds}{number of folds for corss-validation. Arguement required when \code{type="CV"}. Default is \code{5}}
-\item{plot.it}{if TRUE, plot the cross-validated error or the BIC score curve}
+\item{plot.it}{if \code{TRUE}, plot the cross-validated error or the BIC score curve}
 }
 
 
@@ -36,7 +36,7 @@ Storlie, C. B., Bondell, H. D., Reich, B. J. and Zhang, H. H. (2011). "Surface e
 }
 
 \author{
-Hao Helen Zhang  \email{hzhang@stat.ncsu.edu} }
+Hao Helen Zhang }
 
 \seealso{\code{\link{cosso}}, \code{\link{predict.cosso}}
 }
@@ -47,4 +47,9 @@ Hao Helen Zhang  \email{hzhang@stat.ncsu.edu} }
 data(ozone)
 cossoObj <- cosso(x=ozone[,-1],y=ozone[,1],nbasis=100)
 tune.cosso(cossoObj,type="BIC")
+
+\dontrun{
+## Tune by 5-fold CV
+tune.cosso(cossoObj,type="CV")
+}
 }

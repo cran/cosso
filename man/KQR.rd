@@ -17,7 +17,7 @@ Build a Kernel Quantile Regression Model
 \item{lam0s}{tuning grid points for smoothing parameter \eqn{\lambda}. The default value is \code{2^seq(-14,-20,by=-0.5)}.}
 \item{folds}{number of folds for corss-validation. Default is \code{5}.}
 \item{parallel}{parallelize task using \code{snowfall} package? Default is \code{FALSE}. Recommended when sample size is large.}
-\item{cpus}{number of available cpu unit. Default is \code{1}.}
+\item{cpus}{number of available cpu unit. Default is \code{1}. Arguement required when parallel=\code{TRUE}.}
 }
 
 
@@ -31,7 +31,8 @@ Build a Kernel Quantile Regression Model
 
 
 \author{
-Hao Helen Zhang}
+Hao Helen Zhang and Chen-Yen Lin
+}
 
 
 \references{

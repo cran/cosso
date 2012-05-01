@@ -34,7 +34,7 @@ Storlie, C. B., Bondell, H. D., Reich, B. J. and Zhang, H. H. (2011). "Surface E
 }
 
 \author{
-Hao Helen Zhang  \email{hzhang@stat.ncsu.edu} }
+Hao Helen Zhang}
 
 \seealso{ \code{\link{predict.cosso}}
 }
@@ -45,5 +45,5 @@ Hao Helen Zhang  \email{hzhang@stat.ncsu.edu} }
 data(ozone)
 cossoObj <- cosso(x=ozone[,-1],y=ozone[,1],nbasis=100)
 plot.cosso(cossoObj,plottype="Path")
-plot.cosso(cossoObj,M=2,plottype="F")
+plot.cosso(cossoObj,M=2,plottype="Functionals")
 }

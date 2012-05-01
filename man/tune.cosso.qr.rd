@@ -18,7 +18,7 @@ tune.cosso.qr(object,folds=5,plot.it=TRUE,parallel=FALSE,cpus=1)
 \item{folds}{number of folds for corss-validation. Default is \code{5}.}
 \item{plot.it}{if \code{TRUE}, plot the cross-validation error curve.}
 \item{parallel}{parallelize task using \code{snowfall} package? Default is \code{FALSE}. Recommended when sample size is large.}
-\item{cpus}{number of available cpu unit. Default is \code{1}.}
+\item{cpus}{number of available cpu unit. Default is \code{1}. Arguement required when parallel=\code{TRUE}.}
 }
 
 
@@ -32,7 +32,7 @@ tune.cosso.qr(object,folds=5,plot.it=TRUE,parallel=FALSE,cpus=1)
 
 
 \author{
-Hao Helen Zhang}
+Hao Helen Zhang and Chen-Yen Lin}
 
 \seealso{\code{\link{cosso.qr}}, \code{\link{predict.cosso}}
 }
@@ -41,7 +41,8 @@ Hao Helen Zhang}
 
 \examples{
 data(ozone)
-set.seed(2010)
+set.seed(27695)
+## Use one third observations as training set
 train_id <- sample(1:nrow(ozone),round(nrow(ozone)/3))
 cossoqrObj <- cosso.qr(x=ozone[train_id,-1],y=ozone[train_id,1],tau=0.5)
 tune.cosso.qr(cossoqrObj)

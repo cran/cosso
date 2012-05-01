@@ -14,11 +14,11 @@ Make prediction for future observations or extract the model parameters at a par
 
 
 \arguments{
-\item{object}{a cosso object}
+\item{object}{a cosso object.}
 \item{xnew}{future input values for response prediction}
 \item{M}{a smoothing parameter value. M should be taken between 0 and p. If not provided, a cross-validation procedure will be carried out to select an appropriate value.}
 \item{type}{if \code{type="fit"} (default), fitted values will be returned. If \code{type="coefficients"}, model coefficients will be returned. Abbreviations are allowed.}
-\item{...}{additional arguments for predict generic}
+\item{...}{additional arguments for predict function.}
 }
 
 

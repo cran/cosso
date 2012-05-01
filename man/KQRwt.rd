@@ -4,8 +4,8 @@
 Compute initial weights used in the penalty term of the adaptive COSSO quantile regression model}
 
 \description{
-A preliminary Kernel Quantile Regression model \eqn{f} is first obtained, 
-and then the weight for the jth function component is computed as \eqn{||P_j f||^{-\gamma}}. 
+A preliminary Kernel Quantile Regression model \eqn{f} is first fitted, 
+and then the weight for the j-th function component is computed as \eqn{||P_j f||^{-\gamma}}. 
 Here \eqn{P_j} denotes the projection operator to the subspace.
 }
 
@@ -16,11 +16,11 @@ Here \eqn{P_j} denotes the projection operator to the subspace.
 \item{x}{input matrix; the number of rows is sample size, the number of columns is the data dimension. 
          The range of input variables is scaled to [0,1].}
 \item{y}{response vector}
-\item{tau}{the quantile to be estimated, a number strictly between 0 and 1}
-\item{gampow}{power of the \eqn{L_2} norm. Default is \code{1}}
-\item{folds}{number of folds for corss-validation. Default is \code{5}}
+\item{tau}{the quantile to be estimated, a number strictly between 0 and 1.}
+\item{gampow}{power of the \eqn{L_2} norm. Default is \code{1}.}
+\item{folds}{number of folds for corss-validation. Default is \code{5}.}
 \item{parallel}{parallelize task using \code{snowfall} package? Default is \code{FALSE}. Recommended when sample size is large.}
-\item{cpus}{number of available cpu unit. Default is \code{1}}
+\item{cpus}{number of available cpu unit. Default is \code{1}. Arguement required when parallel=\code{TRUE}.}
 }
 
 
@@ -30,7 +30,7 @@ Here \eqn{P_j} denotes the projection operator to the subspace.
 
 
 \author{
-Hao Helen Zhang }
+Hao Helen Zhang and Chen-Yen Lin}
 
 
 \references{

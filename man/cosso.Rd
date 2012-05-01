@@ -1,7 +1,7 @@
 \name{cosso} 
 \alias{cosso}
 \title{
-Fit the additive COSSO and adaptive COSSO models.
+Fit COSSO and adaptive COSSO models.
 }
 
 \description{
@@ -32,29 +32,26 @@ function estimates. See Storlie et al. (2011) for more discussions. One possible
 as the inverse \eqn{L_2} norm of initial function estimator, see \code{\link{SSANOVAwt}}.
 
 A subset of the observations can be selected as "knots" to faciliate computation. Default number of "knots" is the sample size.
-
 }
 
 \value{
+An object with S3 class "cosso".
 \item{x}{the input matrix}
 \item{y}{the response vector}
 \item{Kmat}{an array containing kernel matrices for each input variables}
 \item{basis.id}{Indices of observations used as "knots"}
-\item{wt}{pre-specified weights}
+\item{wt}{weights}
 \item{tune}{a list containing prelminary tuning result}
 }
 
 \references{
 Lin, Y. and Zhang, H. H. (2006) "Component Selection and Smoothing in Smoothing Spline Analysis of Variance Models", Annals of Statistics, \bold{34}, 2272--2297.
 
-Zhang, H. H. and Lin, Y. (2006) "Component Selection and Smoothing for Nonparametric Regression in Exponential Families," Statistica Sinica, \bold{16}, 1021--1041.
-
 Storlie, C. B., Bondell, H. D., Reich, B. J. and Zhang, H. H. (2011) "Surface Estimation, Variable Selection, and the Nonparametric Oracle Property", Statistica Sinica, \bold{21}, 679--705.
 }
 
 \author{
-Hao Helen Zhang \email{hzhang@stat.ncsu.edu}
-}
+Hao Helen Zhang}
 
 \seealso{ \code{\link{plot.cosso}}, \code{\link{predict.cosso}}, \code{\link{tune.cosso}}
 }
