@@ -1,6 +1,7 @@
-export(rescale,genK,bigGram,gram,wsGram,predict.cosso,plot.cosso,
+export(rescale,genK,bigGram,wsGram,predict.cosso,plot.cosso,
        cosso,tune.cosso,sspline,gcvlam,twostep,cvadd,bicadd,gcv,bic,compdf,SSANOVAwt,cvsplit,
-       cosso.qr,tune.cosso.qr,cquan,kqr,garrote.qr,CVadd,cvLam.qr,cvM.qr,cvsplitID,df.est,rho,KQR,KQRwt)
+       cosso.qr,tune.cosso.qr,cquan,kqr,garrote.qr,CVadd,cvLam.qr,cvM.qr,cvsplitID,df.est,rho,KQRwt,
+       cosso.cox,tune.cosso.cox,SSANOVAwt.cox,PartialLik,RiskSet,gradient.Hessian.Theta,gradient.Hessian.C,garrote.Cox,sspline.Cox,twostep.Cox,ACV.lambda,My_solve.QP,My_solve)
 
 S3method("plot","cosso")
 S3method("predict","cosso")

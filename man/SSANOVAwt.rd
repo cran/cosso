@@ -1,11 +1,13 @@
 \name{SSANOVAwt}
 \alias{SSANOVAwt}
 \title{
-Computing the weights used in the penalty term of the adaptive COSSO.} 
+Compute adaptive weights for Gaussian-type response
+}
+ 
 
 \description{
-A preliminary estimate of \eqn{f} is first obtained, 
-and then the weight for the jth function component is computed as \eqn{||P_j f||^{-\gamma}}. 
+A preliminary estimate of \eqn{\eta} is first obtained, 
+and then the weight for the j-th function component is computed as \eqn{||P_j \tilde{\eta}||^{-\gamma}}. 
 Here \eqn{P_j} denotes the projection operator to the subspace. By default, we use the smoothing spline solution 
 as the initial estimator and set \eqn{\gamma} as 1.
 }
@@ -21,9 +23,16 @@ as the initial estimator and set \eqn{\gamma} as 1.
 \item{gampow}{power of the \eqn{L_2} norm. Default is \code{1}}
 }
 
+\details{
+The initial mean function is estimated via a smooothing spline objective function:
+\deqn{RSS/nobs+\lambda_0\sum_{j=1}^p\alpha_j||P_j\eta||^2.}
+
+The smoothing parameters \eqn{\lambda_0} will be tuned by generalized cross-validation,
+but \eqn{\alpha_j}'s are given in the argumnent \code{mscale}.
+}
 
 \value{
-\item{adwt}{The adaptive weights used in the adaptive COSSO}
+\item{adwt}{The adaptive weights}
 }
 
 \references{

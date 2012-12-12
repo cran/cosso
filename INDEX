@@ -1,10 +1,13 @@
- cosso.qr	      Fit additive COSSO and adaptive COSSO models for Quantile Regression
- cosso	        Fit additive COSSO and adaptive COSSO models for Gaussian-type responses  
- KQR            Fit a Kernel Quantile Regression model
- KQRwt          Estimate weights for each functional components for Quantile Regression
- ozone          Ozone pollution data in Los Angels, 1976    
+ cosso.cox      Estimate the log-relative risk using Smoothing Splines with COSSO penalty
+ cosso.qr	      Estimate the quantile function by Smoothing Splines with COSSO penalty
+ cosso	        Estimate the mean regression function for Gaussian response using Smmohting Spines with COSSO penalty
+ KQRwt          Compute adaptive weights for Quantile regression
+ veteran        Veterans' Administration Lung Cancer study
+ ozone          Ozone pollution data in Los Angels, 1976
  plot.cosso     Plot method for COSSO object
  predict.cosso	Make predictions or extract coefficients from a fitted COSSO model
- SSANOVAwt      Estimate weights for each functional components for Gaussian-type response
+ SSANOVAwt      Compute adaptive weights for Gaussian-type response
+ SSANOVAwt.cox  Compute adaptive weights for Cox proportional hazards regression
+ tune.cosso     Tuning procedure for COSSO models for Gaussian-type responses
  tune.cosso.qr  Tuning procedure for COSSO models for Quantile Regression
- tune.cosso     Tuning procedure for COSSO models for Gaussian-type responses 
+ tune.cosso.cox  Tuning procedure for COSSO models for Cox Regression

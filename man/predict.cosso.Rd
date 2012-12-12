@@ -31,21 +31,21 @@ When \code{type="coefficients"}, three sets of coefficients will be returned.
 \item{theta}{the estimated scale parameters for each functional component}
 }
 
-\references{
-Lin, Y and Zhang, H. H. (2006). "Component Selection and Smoothing in Smoothing Spline Analysis of Variance Models", Annals of Statistics, \bold{34}, 2272--2297.
-
-Storlie, C. B., Bondell, H. D., Reich, B. J. and Zhang, H. H. (2011). "Surface estimation, variable selection, and the nonparametric oracle property", Statistica Sinica, \bold{21}, 679--705.
-}
 
 \author{
-Hao Helen Zhang \email{hzhang@stat.ncsu.edu} }
+Hao Helen Zhang and Chen-Yen Lin}
 
 \seealso{\code{\link{plot.cosso}}
 }
 
 \examples{ 
 data(ozone)
-ozone_cosso <- cosso(x=ozone[,-1],y=ozone[,1],nbasis=100)
-predict.cosso(ozone_cosso,ozone[,-1],M=2,type="fit")
-predict.cosso(ozone_cosso,M=2,type="c")
+## Use half of the observations for demonstration
+set.seed(27695)
+train.id <- sort(sample(1:nrow(ozone),ceiling(nrow(ozone)/2)))
+cossoObj <- cosso(x=ozone[train.id,2:5],y=ozone[train.id,1],nbasis=50)
+## Compute model parameters
+predict.cosso(cossoObj,M=2,type="c")
+## Make prediction on full data
+predict.cosso(cossoObj,ozone[,2:5],M=2,type="c")
 }

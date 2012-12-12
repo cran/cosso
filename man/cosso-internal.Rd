@@ -1,7 +1,6 @@
 \name{cosso-internal}
 \alias{rescale}
 \alias{genK}
-\alias{gram}
 \alias{bigGram}
 \alias{wsGram}
 \alias{sspline}
@@ -22,6 +21,17 @@
 \alias{garrote.qr}
 \alias{kqr}
 \alias{cvsplitID}
+\alias{My_solve}
+\alias{My_solve.QP}
+\alias{ACV.lambda}
+\alias{twostep.Cox}
+\alias{sspline.Cox}
+\alias{gradient.Hessian.C}
+\alias{garrote.Cox}
+\alias{gradient.Hessian.Theta}
+\alias{PartialLik}
+\alias{RiskSet}
+
 \title{Internal Functions}
 
 \description{
