@@ -1,11 +1,8 @@
-export(rescale,genK,bigGram,wsGram,predict.cosso,plot.cosso,
-       cosso,tune.cosso,sspline,gcvlam,twostep,cvadd,bicadd,gcv,bic,compdf,SSANOVAwt,cvsplit,
-       cosso.qr,tune.cosso.qr,cquan,kqr,garrote.qr,CVadd,cvLam.qr,cvM.qr,cvsplitID,df.est,rho,KQRwt,
-       cosso.cox,tune.cosso.cox,SSANOVAwt.cox,PartialLik,RiskSet,gradient.Hessian.Theta,gradient.Hessian.C,garrote.Cox,sspline.Cox,twostep.Cox,ACV.lambda,My_solve.QP,My_solve)
-
+export(rescale,genK,genK.cat,bigGram,wsGram,My_solve.QP,My_solve,cvsplitID,
+       cosso,predict.cosso,plot.cosso,tune.cosso,SSANOVAwt,
+       cosso.Gaussian,tune.cosso.Gaussian,twostep.Gaussian,sspline,cvlam.Gaussian,SSANOVAwt.Gaussian,
+       cosso.Binomial,tune.cosso.Binomial,cvlam.logistic,twostep.Binomial,garrote.Logistic,garrote.Logistic.GH,sspline.Binomial,SSANOVAwt.Binomial,
+       cosso.qr,cosso.qr.Parallel,cosso.qr.Sequential,twostep.qr,kqr,garrote.qr,rho,SSANOVAwt.qr,
+       cosso.Cox,cosso.Cox.Parallel,cosso.Cox.Sequential,tune.cosso.Cox,ACV.lambda,twostep.Cox,sspline.Cox,gradient.Hessian.C,garrote.Cox,gradient.Hessian.Theta,SSANOVAwt.Cox,PartialLik,RiskSet  )
 S3method("plot","cosso")
 S3method("predict","cosso")
-
-
-
-

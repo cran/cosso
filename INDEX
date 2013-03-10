@@ -1,13 +1,8 @@
- cosso.cox      Estimate the log-relative risk using Smoothing Splines with COSSO penalty
- cosso.qr	      Estimate the quantile function by Smoothing Splines with COSSO penalty
- cosso	        Estimate the mean regression function for Gaussian response using Smmohting Spines with COSSO penalty
- KQRwt          Compute adaptive weights for Quantile regression
+ cosso	        Fit cosso models with various types of response.
+ tune.cosso     Tuning procedure for cosso models
+ SSANOVAwt      Fit a SS-ANOVA model to compute adaptive weights.
+ plot.cosso     Plot method for cosso object.
+ predict.cosso	Make predictions or extract coefficients from a fitted cosso model.
  veteran        Veterans' Administration Lung Cancer study
  ozone          Ozone pollution data in Los Angels, 1976
- plot.cosso     Plot method for COSSO object
- predict.cosso	Make predictions or extract coefficients from a fitted COSSO model
- SSANOVAwt      Compute adaptive weights for Gaussian-type response
- SSANOVAwt.cox  Compute adaptive weights for Cox proportional hazards regression
- tune.cosso     Tuning procedure for COSSO models for Gaussian-type responses
- tune.cosso.qr  Tuning procedure for COSSO models for Quantile Regression
- tune.cosso.cox  Tuning procedure for COSSO models for Cox Regression
+ BUPA           Liver Disorders Data Set 
