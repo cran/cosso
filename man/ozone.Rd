@@ -3,7 +3,7 @@
 \alias{ozone}
 \title{Ozone pollution data in Los Angels, 1976}
 \description{
-This is the ozone data used in Breiman and Friedman (1985). This dataset contains 330 observations, 
+This is the ozone data used in Breiman and Friedman (1985). This dataset contains 330 observations,
 and each observation is a daily measurement.
 }
 
@@ -26,7 +26,7 @@ wind    \tab Wind speed (mph). minimum 0 and maximum 21 in original scale.  \cr
 }
 
 \details{
-All the variables, except for the response, have been sacled to [0,1] interval. To transform
+All the variables, except for the response, have been scaled to [0,1] interval. To transform
 back to the original scale, use the formula:
 \deqn{x=min+(max-min)*z.}
 }

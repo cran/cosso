@@ -23,7 +23,7 @@ DRINKS  \tab  number of alcoholic beverages drunk per day. minimum 0 and maximum
 }
 
 \details{
-All the variables, except for the response, have been sacled to [0,1] interval. To transform
+All the variables, except for the response, have been scaled to [0,1] interval. To transform
 back to the original scale, use the formula:
 \deqn{x=min+(max-min)*z.}
 }

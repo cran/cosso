@@ -1,4 +1,4 @@
-\name{cosso} 
+\name{cosso}
 \alias{cosso}
 \title{Fit a generalized nonparametric model with cosso penalty}
 
@@ -13,19 +13,19 @@ cosso(x,y,tau,family=c("Gaussian","Binomial","Cox","Quantile"),wt=rep(1,ncol(x))
 
 
 \arguments{
-\item{x}{input matrix; the number of rows is sample size, the number of columns is the data dimension. 
+\item{x}{input matrix; the number of rows is sample size, the number of columns is the data dimension.
          The range of input variables is scaled to [0,1] for continuous variables. Variables with less than 7 unique values will be considered as discrete variable.}
-\item{y}{response vector. Quantitative for \code{family="Gaussian"} or \code{family="Quantile"}. 
+\item{y}{response vector. Quantitative for \code{family="Gaussian"} or \code{family="Quantile"}.
          For \code{family="Binomial"} should be a vector with two levels.
          For \code{family="Cox"}, y should be a two-column matrix (or data frame) with columns named 'time' and 'status'}
-\item{tau}{the quantile to be estimated, a number strictly between 0 and 1. Arguement required when \code{family="Quantile"}.}
+\item{tau}{the quantile to be estimated, a number strictly between 0 and 1. Argument required when \code{family="Quantile"}.}
 \item{family}{response type. Abbreviations are allowed.}
 \item{wt}{weights for predictors. Default is \code{rep(1,ncol(x))}}
-\item{scale}{if \code{TRUE}, continuous predictors will be rescaled to [0,1] interval. Dafault is \code{FALSE}.}
+\item{scale}{if \code{TRUE}, continuous predictors will be rescaled to [0,1] interval. Default is \code{FALSE}.}
 \item{nbasis}{number of "knots" to be selected. Ignored when \code{basis.id} is provided.}
-\item{basis.id}{index designating selected "knots". Arguement is not valid for \code{family="Quantile"}.}
+\item{basis.id}{index designating selected "knots". Argument is not valid for \code{family="Quantile"}.}
 \item{cpus}{number of available processor units. Default is \code{1}. If \code{cpus}>=2, parallelize task using "parallel" package. Recommended when either sample size or number of covariates is large.
-            Arguement is only valid for \code{family="Cox"} or \code{family="Quantile"}.}
+            Argument is only valid for \code{family="Cox"} or \code{family="Quantile"}.}
 }
 
 \details{
@@ -54,7 +54,7 @@ Unless specified via \code{basis.id} or \code{nbasis}, the default number of "kn
 \eqn{max}(35,11 * nobs^(2/9)) for \code{"Cox"}.
 
 
-The weights can be specified based on either user's own discretion or adaptively computed from initial 
+The weights can be specified based on either user's own discretion or adaptively computed from initial
 function estimates. See Storlie et al. (2011) for more discussions. One possible choice is to specify the weights
 as the inverse \eqn{L_2} norm of initial function estimator, see \code{\link{SSANOVAwt}}.
 }
@@ -69,7 +69,7 @@ An object with S3 class "cosso".
 \item{basis.id}{indices of observations used as "knots".}
 \item{cpus}{number of cpu units used. Will be returned if \code{family="Cox"} or \code{family="Quantile"}.}
 \item{tau}{the quantile to be estimated. Will be returned if \code{family="Quantile"}.}
-\item{tune}{a list containing prelminary tuning result and L2-norm.}
+\item{tune}{a list containing preliminary tuning result and L2-norm.}
 }
 
 \references{
@@ -77,7 +77,7 @@ Lin, Y. and Zhang, H. H. (2006) "Component Selection and Smoothing in Smoothing 
 
 Leng, C. and Zhang, H. H. (2006) "Model selection in nonparametric hazard regression", Nonparametric Statistics, \bold{18}, 417--429.
 
-Zhang, H. H. and Lin, Y. (2006) "Component Selection and Smoothing for Noparametric Regression in Exponential Families", Statistica Sinica, \bold{16}, 1021--1041.
+Zhang, H. H. and Lin, Y. (2006) "Component Selection and Smoothing for Nonparametric Regression in Exponential Families", Statistica Sinica, \bold{16}, 1021--1041.
 
 Storlie, C. B., Bondell, H. D., Reich, B. J. and Zhang, H. H. (2011) "Surface Estimation, Variable Selection, and the Nonparametric Oracle Property", Statistica Sinica, \bold{21}, 679--705.
 
@@ -112,7 +112,7 @@ x=cbind(rbinom(200,1,.7),matrix(runif(200*9,0,1),nc=9))
 trueProb=1/(1+exp(-x[,1]-sin(2*pi*x[,2])-5*(x[,4]-0.4)^2))
 y=rbinom(200,1,trueProb)
 
-B.Obj=cosso(x,y,family="Bin") 
+B.Obj=cosso(x,y,family="Bin")
 ## Clean up
 rm(list=ls())
 
